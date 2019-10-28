@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import del from 'rollup-plugin-delete';
 import resolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -7,7 +8,10 @@ const outputFolder = './dist';
 const pJson = fs.readJsonSync('package.json');
 const componentName = pJson.name.slice(pJson.name.lastIndexOf('/')+1);
 
-const plugins = [
+const plugins = (options) => [
+    options.clean && del({
+        targets: outputFolder
+    }),
     resolve(),
     typescript({
         tsconfigDefaults: {
@@ -29,7 +33,7 @@ export default [
             format: 'umd',
             name: componentName,
         },
-        plugins
+        plugins: plugins({clean: true})
     },
     {
         input: 'index.ts',
@@ -38,6 +42,6 @@ export default [
             file: `${outputFolder}/${componentName}.js`,
             format: 'esm',
         },
-        plugins
+        plugins: plugins({clean: false})
     },
 ]
