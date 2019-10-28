@@ -33,7 +33,7 @@ const plugins = (options) => [
         tsconfigDefaults: {
             compilerOptions: {
                 module: 'ESNext',
-                target: 'es5',
+                target: 'ESNEXT',
                 declaration: true,
                 strict: true,
                 experimentalDecorators: true,
