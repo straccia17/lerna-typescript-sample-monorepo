@@ -20,5 +20,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript2": "^0.24.3",
     "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1"
   }
 }

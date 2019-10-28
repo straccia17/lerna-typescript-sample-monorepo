@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mycomponents/base": "1.0.0"
+    "@mycomponents/base": "1.0.0",
+    "lit-element": "^2.2.1"
   },
   "devDependencies": {
     "rollup": "^1.26.0",

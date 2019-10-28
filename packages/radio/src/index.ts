@@ -1,14 +1,17 @@
+import { html, customElement } from "lit-element";
 import {BaseComponent} from '@mycomponents/base';
-import radioTemplate from './template.html';
-import style from './style.less';
 
+@customElement('my-radio-component')
 export class RadioComponent extends BaseComponent {
 
     constructor() {
         super();
         this.message = 'RadioComponent';
-        console.log(this.message);
-        console.log(radioTemplate);
-        console.log(style);
+    }
+
+    render() {
+        return html`
+            <p>${this.message}</p>
+        `;
     }
 }

@@ -1,13 +1,13 @@
-import baseTemplate from './template.html';
-import style from './style.less';
+import { LitElement, html, customElement, property } from "lit-element";
 
-export class BaseComponent {
+@customElement('my-base-component')
+export class BaseComponent extends LitElement {
 
-    protected message: string = 'BaseComponent';
+    @property() message: string = 'BaseComponent';
 
-    constructor() {
-        console.log(this.message);
-        console.log(baseTemplate);
-        console.log(style);
+    render() {
+        return html`
+            <p>${this.message}</p>
+        `;
     }
 }
