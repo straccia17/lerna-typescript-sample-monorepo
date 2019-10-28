@@ -1,0 +1,20 @@
+{
+  "name": "@mycomponents/base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/base.umd.js",
+  "module": "dist/base.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^1.26.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.24.3",
+    "typescript": "^3.6.4"
+  }
+}

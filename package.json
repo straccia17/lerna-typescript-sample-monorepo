@@ -1,0 +1,21 @@
+{
+  "name": "lerna-ts-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "lerna clean -y && lerna bootstrap --hoist",
+    "build": "lerna run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fs-extra": "^8.1.0",
+    "lerna": "^3.18.3",
+    "rollup": "^1.26.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.24.3",
+    "typescript": "^3.6.4"
+  }
+}

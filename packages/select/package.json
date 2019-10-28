@@ -1,0 +1,23 @@
+{
+  "name": "@mycomponents/select",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/select.umd.js",
+  "module": "dist/select.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mycomponents/base": "1.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.26.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.24.3",
+    "typescript": "^3.6.4"
+  }
+}
