@@ -5,6 +5,7 @@ import del from 'rollup-plugin-delete';
 import html from 'rollup-plugin-html';
 import less from 'rollup-plugin-less';
 import resolve from 'rollup-plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
 
@@ -48,6 +49,7 @@ const plugins = (options) => [
             { src: ['src/**/*', '!**/*.{ts|js}'], dest: outputFolder }
         ]
     }),
+    options.minify && terser(),
 ];
 
 export default [
@@ -58,17 +60,17 @@ export default [
             format: 'umd',
             name: componentName,
         },
-        plugins: plugins({ clean: true })
+        plugins: plugins({ clean: true, minify: true })
     },
     {
         input: 'src/index.ts',
         external: (id) => {
-            return dependencies.includes(id) ||  !['ts', 'js'].includes(path.extname(id));
+            return dependencies.includes(id) || !['ts', 'js'].includes(path.extname(id));
         },
         output: {
             file: `${outputFolder}/${componentName}.js`,
             format: 'esm',
         },
-        plugins: plugins({ copyResource: true })
+        plugins: plugins({ copyResource: true, minify: true })
     },
 ]
